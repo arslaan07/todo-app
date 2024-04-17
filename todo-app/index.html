@@ -9,12 +9,14 @@
         }
     </style>
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1 class="page-header">TODO LIST</h1>
     <div>
-        <input type="text" id="write">
+        <input type="text" id="write" placeholder="things i love to do">
         <ul id="todo-list">
-            </ul>
+        </ul>
     </div>
     <script>
         let write = document.getElementById("write");
@@ -27,12 +29,24 @@
         })
         function addTodo(val) {
             let list = document.createElement("li");
-            list.innerHTML = `${val}`;
+            list.textContent = val;
+            let deleteIcon = document.createElement("span");
+            deleteIcon.innerHTML = "&#10006;"
+            deleteIcon.classList.add('delete-icon');
+            list.appendChild(deleteIcon);
+            list.classList.add('todo-item');
             todoList.appendChild(list);
             console.log(val);
 
             list.addEventListener("click", function() {
-                this.classList.toggle('done');
+                let x = this.classList.toggle('done');
+                if(x) {
+                    this.style.textDecorationColor = '#00008B';
+                }
+            })
+            deleteIcon.addEventListener("click", function(e) {
+                e.stopPropagation();
+                todoList.removeChild(list);
             })
         }
     </script>

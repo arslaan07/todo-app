@@ -1,0 +1,31 @@
+body {
+    /* background-color: blue; */
+    background: linear-gradient(to right, #e725e7, #00008B);
+}
+#write {
+    margin: 5% auto 0 auto;
+    display: block;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    border-color: black;
+    border-width: 4px;
+}
+.page-header{
+    text-align: center;
+    font-size: 45px;
+    color: whitesmoke;
+  
+}
+
+#todo-list {
+    position: absolute;
+    left: 30%;
+    font-size: 30px;
+    color: white;
+}
+.delete-icon { 
+    cursor: pointer;
+    margin-left: 20px;
+}
